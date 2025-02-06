@@ -1,19 +1,52 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gusano en Mundo Gigante</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Gusano en Mundo Gigante - Slither Style</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="menu">
-        <h1>Gusano en Mundo Gigante</h1>
-        <label for="playerName">Nombre del Gusano:</label>
-        <input type="text" id="playerName" placeholder="Ejemplo: Flash">
-        <button onclick="startGame()">Jugar</button>
+  <!-- Barra superior (like, share, follow, graphics) -->
+  <div class="header-buttons">
+    <div class="left-buttons">
+      <button class="social-btn">Like</button>
+      <button class="social-btn">Share</button>
+      <button class="social-btn">Follow</button>
     </div>
-    <canvas id="gameCanvas"></canvas>
-    <script src="game.js"></script>
+    <div class="right-buttons">
+      <button class="graphics-btn">Graphics: <span>High quality</span></button>
+    </div>
+  </div>
+  
+  <!-- Menú principal -->
+  <div class="menu-container" id="menu">
+    <h1 class="title">
+      <span class="slither-green">S N A K E</span>
+      <span class="slither-purple">.I O</span>
+    </h1>
+    <p class="subtitle">Come y Crece!</p>
+    
+    <input type="text" class="nickname-input" id="playerName" placeholder="Nickname">
+    <button class="play-btn" id="playBtn">Play</button>
+  </div>
+  
+  <!-- Barra inferior (change skin, choose server) -->
+  <div class="footer-buttons">
+    <button class="change-skin">Change Skin</button>
+    <button class="choose-server">Choose Server</button>
+  </div>
+  
+  <!-- Canvas del juego (inicialmente oculto) -->
+  <canvas id="gameCanvas" style="display: none;"></canvas>
+  
+  <!-- Tu lógica de juego -->
+  <script src="game.js"></script>
+  
+  <!-- Aquí enlazamos el botón "Play" con la función startGame() -->
+  <script>
+    document.getElementById("playBtn").addEventListener("click", function() {
+      startGame();
+    });
+  </script>
 </body>
 </html>

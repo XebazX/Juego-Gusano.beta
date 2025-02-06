@@ -1,46 +1,130 @@
-body {
+/* Reset básico */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #1b1b1b; /* Fondo oscuro */
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    height: 100vh;
     overflow: hidden;
-    background-color: black;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    color: white;
-}
-
-#menu {
+  }
+  
+  /* ----- Contenedores de botones (header y footer) ----- */
+  
+  .header-buttons, .footer-buttons {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px white;
-}
-
-canvas {
-    display: none;
-    background-color: #111;
-}
-
-input {
+    width: 100%;
     padding: 10px;
-    border: none;
-    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header-buttons {
+    top: 0;
+  }
+  
+  .footer-buttons {
+    bottom: 0;
+  }
+  
+  /* Agrupaciones de botones a la izquierda y derecha */
+  .left-buttons, .right-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  /* ----- Estilos del menú principal ----- */
+  .menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Centrado vertical y horizontal */
+    text-align: center;
+  }
+  
+  /* Título con dos spans para simular colores distintos (verde y morado) */
+  .title {
+    font-size: 64px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    font-weight: bold;
+  }
+  
+  .slither-green {
+    background: linear-gradient(to right, #00ff00, #80ff80);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .slither-purple {
+    background: linear-gradient(to right, #9933ff, #cc99ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* Subtítulo */
+  .subtitle {
     font-size: 16px;
-}
-
-button {
-    padding: 10px 20px;
+    color: #aaa;
+    margin-bottom: 20px;
+  }
+  
+  /* Campo de texto para nickname */
+  .nickname-input {
+    width: 280px;
+    height: 40px;
     border: none;
-    background-color: #00ff00;
-    color: black;
-    font-size: 18px;
+    border-radius: 20px;
+    padding: 0 20px;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 15px;
+    outline: none;
+  }
+  
+  /* Botón de Play con degradado verde */
+  .play-btn {
+    background: linear-gradient(180deg, #00cc00 0%, #009900 100%);
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 20px;
+    padding: 10px 40px;
+    cursor: pointer;
+    outline: none;
+    transition: background 0.3s;
+  }
+  
+  .play-btn:hover {
+    background: linear-gradient(180deg, #00dd00 0%, #00aa00 100%);
+  }
+  
+  /* ----- Botones extra (header/footer) ----- */
+  
+  .social-btn,
+  .graphics-btn,
+  .change-skin,
+  .choose-server {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
     cursor: pointer;
     border-radius: 5px;
-    margin-top: 10px;
-}
-
-button:hover {
-    background-color: #00cc00;
-}
+    font-size: 14px;
+    transition: background 0.2s;
+  }
+  
+  .social-btn:hover,
+  .graphics-btn:hover,
+  .change-skin:hover,
+  .choose-server:hover {
+    background: #444;
+  }
+  
